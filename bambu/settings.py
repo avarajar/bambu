@@ -25,7 +25,7 @@ SECRET_KEY = ')9g&6gh)tnqsc@7k$-j1&=ms4_k@^5s=lt4cyq^s3t51pf*a-i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'administrador',
+    'rest_framework',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -53,6 +54,8 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'bambu.urls'
+
+GRAPPELLI_ADMIN_TITLE = 'Bambu'
 
 TEMPLATES = [
     {
