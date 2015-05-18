@@ -1,0 +1,11 @@
+*.pyc
+*~
+*.project
+.gaedata
+static/
+_res/.sass-cache
+.sass-cache
+media/
+.DS_Store
+#venv
+bambu_venv/
