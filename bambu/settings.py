@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -60,6 +61,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.core.context_processors.request',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -92,7 +94,9 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'America/Bogota'
+
+LANGUAGE_CODE = 'es-co'
 
 TIME_ZONE = 'UTC'
 
@@ -105,5 +109,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
+
+MEDIA_ROOT = os.sep.join(os.path.abspath(__file__).split(os.sep)[:-1]+['media'])
+
+MEDIA_URL = '/media/'
+
+STATIC_ROOT = os.sep.join(os.path.abspath(__file__).split(os.sep)[:-1]+['static'])
 
 STATIC_URL = '/static/'
