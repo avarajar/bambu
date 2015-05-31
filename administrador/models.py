@@ -57,11 +57,11 @@ class Producto(models.Model):
         super(Producto, self).save(*args, **kwargs)
 
 
-class ImagenesMenu(object):
+class ImagenesMenu(models.Model):
     """docstring for ImagenesMenu"""
     nombre = models.CharField(max_length=50, blank=True)
-    icono = models.ImageField(upload_to='imagenes_menu/', null=True)
-    imagen_principal = models.ImageField(upload_to='imagenes_menu/', null=True)
+    icono = models.ImageField(upload_to='imagenes_menu/', null=True, blank=True)
+    imagen_principal = models.ImageField(upload_to='imagenes_menu/', null=True, blank=True)
 
     def __unicode__(self):
         return u"%s" % self.nombre
