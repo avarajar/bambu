@@ -1,6 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
-from colorfield.fields import ColorField
+# from colorfield.fields import ColorField
 
 
 class SliderPrincipal(models.Model):
@@ -13,7 +13,7 @@ class SliderPrincipal(models.Model):
 
 class Colore(models.Model):
     nombre = models.CharField(max_length=15)
-    color = ColorField(default='ffffff')
+    # color = ColorField(default='ffffff')
 
     def __unicode__(self):
         return u"%s" % self.nombre
