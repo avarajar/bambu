@@ -62,6 +62,12 @@ class ImagenesMenu(models.Model):
     nombre = models.CharField(max_length=50, blank=True)
     icono = models.ImageField(upload_to='imagenes_menu/', null=True, blank=True)
     imagen_principal = models.ImageField(upload_to='imagenes_menu/', null=True, blank=True)
+    slug = models.SlugField(max_length=250, blank=True, default='')
 
     def __unicode__(self):
         return u"%s" % self.nombre
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.nombre)
+        super(ImagenesMenu, self).save(*args, **kwargs)
