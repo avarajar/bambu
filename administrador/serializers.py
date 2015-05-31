@@ -13,3 +13,4 @@ class ProductoSerializer(serializers.ModelSerializer):
         model = Producto
         fields = ('nombre', 'descripcion', 'colores', 'imagen_principal',
                   'imagen_dos', 'imagen_tres', 'imagen_cuatro', 'categoria')
+        depth = 1

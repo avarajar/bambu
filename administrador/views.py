@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from .serializers import ProductoSerializer
 from .models import Producto
-from rest_framework import viewsets
+from .filters import ProductoFilter
+from rest_framework import viewsets, filters
 
 
 class ProductoViewSet(viewsets.ModelViewSet):
@@ -10,5 +11,6 @@ class ProductoViewSet(viewsets.ModelViewSet):
     """
     queryset = Producto.objects.all()
     serializer_class = ProductoSerializer
-    # filter_class = CardGroupFilter
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_class = ProductoFilter
     # permission_classes = (ReadOnlyPermission, )
