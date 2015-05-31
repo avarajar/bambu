@@ -28,14 +28,6 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2] + ['templates']),
-)
-
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -49,6 +41,7 @@ INSTALLED_APPS = (
     'administrador',
     'rest_framework',
     'django_extensions',
+    'colorfield',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -69,7 +62,10 @@ GRAPPELLI_ADMIN_TITLE = 'Bambu'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+                os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2] + ['templates']),
+
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
