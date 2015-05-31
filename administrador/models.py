@@ -60,7 +60,8 @@ class Producto(models.Model):
 class ImagenesMenu(object):
     """docstring for ImagenesMenu"""
     nombre = models.CharField(max_length=50, blank=True)
-    imagen = models.ImageField(upload_to='imagenes_menu/', null=True)
+    icono = models.ImageField(upload_to='imagenes_menu/', null=True)
+    imagen_principal = models.ImageField(upload_to='imagenes_menu/', null=True)
 
     def __unicode__(self):
         return u"%s" % self.nombre
