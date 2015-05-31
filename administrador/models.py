@@ -1,6 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
-from colorfield.fields import ColorField
+# from colorfield.fields import ColorField
 
 
 class SliderPrincipal(models.Model):
@@ -13,7 +13,7 @@ class SliderPrincipal(models.Model):
 
 class Colore(models.Model):
     nombre = models.CharField(max_length=15)
-    #color = ColorField(default='ffffff')
+    # color = ColorField(default='ffffff')
 
     def __unicode__(self):
         return u"%s" % self.nombre
@@ -55,3 +55,12 @@ class Producto(models.Model):
         if not self.slug:
             self.slug = slugify(self.nombre)
         super(Producto, self).save(*args, **kwargs)
+
+
+class ImagenesMenu(object):
+    """docstring for ImagenesMenu"""
+    nombre = models.CharField(max_length=50, blank=True)
+    imagen = models.ImageField(upload_to='imagenes_menu/', null=True)
+
+    def __unicode__(self):
+        return u"%s" % self.nombre
