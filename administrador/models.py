@@ -19,6 +19,7 @@ class Colore(models.Model):
 
 class Categoria(models.Model):
     categoria = models.CharField(max_length=20)
+    imagen = models.ImageField(upload_to='imagenes_categorias/', null=True)
     slug = models.SlugField(max_length=250, blank=True, default='')
 
     def __unicode__(self):
