@@ -28,6 +28,14 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 
+TEMPLATE_DIRS = (
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2] + ['templates']),
+)
+
+
 # Application definition
 
 INSTALLED_APPS = (
@@ -40,6 +48,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'administrador',
     'rest_framework',
+    'django_extensions',
 )
 
 MIDDLEWARE_CLASSES = (
