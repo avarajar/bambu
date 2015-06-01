@@ -10,3 +10,11 @@ class ProductoFilter(django_filters.FilterSet):
     class Meta:
         model = Producto
         fields = ('categoria', 'recomendado', 'promocion')
+
+
+class CategoriaFilter(django_filters.FilterSet):
+    categoria = django_filters.CharFilter(name='slug')
+
+    class Meta:
+        model = Categoria
+        fields = ('categoria',)

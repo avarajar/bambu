@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .serializers import ProductoSerializer, CategoriaSerializer, ImagenesMenuSerializer
 from .models import Producto, Categoria, ImagenesMenu
-from .filters import ProductoFilter
+from .filters import ProductoFilter, CategoriaFilter
 from rest_framework import viewsets, filters
 
 
@@ -23,6 +23,7 @@ class CategoriaViewSet(viewsets.ModelViewSet):
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer
     filter_backends = (filters.DjangoFilterBackend,)
+    filter_class = CategoriaFilter
 
 
 class ImagenesMenuViewSet(viewsets.ModelViewSet):
