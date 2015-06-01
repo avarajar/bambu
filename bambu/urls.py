@@ -21,6 +21,8 @@ from administrador import views
 
 router = routers.DefaultRouter()
 router.register(r'productos', views.ProductoViewSet)
+router.register(r'categorias', views.CategoriaViewSet)
+router.register(r'menu', views.ImagenesMenuViewSet)
 
 
 urlpatterns = [
