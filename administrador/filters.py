@@ -18,3 +18,11 @@ class CategoriaFilter(django_filters.FilterSet):
     class Meta:
         model = Categoria
         fields = ('categoria',)
+
+
+class MenuFilter(django_filters.FilterSet):
+    nombre = django_filters.CharFilter(name='slug')
+
+    class Meta:
+        model = ImagenesMenu
+        fields = ('nombre',)

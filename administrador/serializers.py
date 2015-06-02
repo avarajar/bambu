@@ -28,5 +28,5 @@ class ImagenesMenuSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ImagenesMenu
-        fields = ('nombre', 'icono', 'imagen_principal')
+        fields = ('nombre', 'icono', 'imagen_principal', 'slug')
         depth = 1
