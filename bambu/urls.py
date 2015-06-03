@@ -23,6 +23,8 @@ router = routers.DefaultRouter()
 router.register(r'productos', views.ProductoViewSet)
 router.register(r'categorias', views.CategoriaViewSet)
 router.register(r'menu', views.ImagenesMenuViewSet)
+router.register(r'recomendados', views.ProductoRViewSet)
+router.register(r'promociones', views.ProductoPViewSet)
 
 
 urlpatterns = [

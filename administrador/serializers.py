@@ -12,7 +12,25 @@ class ProductoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Producto
         fields = ('id', 'nombre', 'descripcion', 'colores', 'imagen_principal',
-                  'imagen_dos', 'imagen_tres', 'imagen_cuatro', 'categoria')
+                  'imagen_dos', 'imagen_tres', 'imagen_cuatro', 'categoria',)
+        depth = 1
+
+
+class ProductoRSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Producto
+        fields = ('id', 'nombre', 'descripcion', 'colores', 'imagen_principal',
+                  'imagen_dos', 'imagen_tres', 'imagen_cuatro', 'categoria',)
+        depth = 1
+
+
+class ProductoPSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Producto
+        fields = ('id', 'nombre', 'descripcion', 'colores', 'imagen_principal',
+                  'imagen_dos', 'imagen_tres', 'imagen_cuatro', 'categoria',)
         depth = 1
 
 
